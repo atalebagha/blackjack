@@ -4,15 +4,13 @@ class window.Hand extends Backbone.Collection
   initialize: (array, @deck, @isDealer) ->
 
   hit: ->
-    @add(@deck.pop())
+    @add(@deck.pop()).last()
+    if @scores() > 21
+      @bust()
 
-  stand: ->
-    @trigger('compare', this)
-    console.log 'trigger compare'
-    # get score for player
+  stand: -> @trigger 'endTurn', @
 
-    # get score for dealer
-    # alert winner
+  bust: -> @trigger 'lose', @
 
   hasAce: -> @reduce (memo, card) ->
     memo or card.get('value') is 1
