@@ -30,7 +30,9 @@ class window.App extends Backbone.Model
       @trigger 'player-win'
     else
       @trigger 'dealer-win'
-    # @resetGame()
+    # @set 'deck', @deck.reset();
+    console.log deck.length
+
 
   getWinner: ->
     console.log 'getWinner invoked'
@@ -44,7 +46,8 @@ class window.App extends Backbone.Model
      # send trigger for view to alert 'Tie Game'
     else
      @trigger 'player-win'
-    # @resetGame();
+    # @set 'deck', @deck.reset();
+    console.log deck.length
 
   # resetGame: ->
   #   @set 'deck', deck = new Deck()

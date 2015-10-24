@@ -10,10 +10,18 @@ class window.Card extends Backbone.Model
         when 11 then 'Jack'
         when 12 then 'Queen'
         else params.rank
+    @createImage()
 
   flip: ->
     @set 'revealed', !@get 'revealed'
-    @
 
+    # if @get 'revealed'
+    #   @createImage()
+    # else
+    @set 'image', "img/card-back.png"
 
+  createImage: ->
+      rank = @get 'rankName'
+      suit = @get 'suitName'
+      @set 'image', "img/cards/#{rank}-#{suit}.png"
 

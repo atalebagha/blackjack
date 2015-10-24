@@ -14,17 +14,17 @@ class window.AppView extends Backbone.View
     @model.on('dealer-win',
       () ->
         alert 'Dealer Wins!'
-        window.location.reload()
+        # window.location.reload()
       , @)
     @model.on('player-win',
       () ->
         alert 'Player Wins!'
-        window.location.reload()
+        # window.location.reload()
       , @)
     @model.on('tie',
       () ->
         alert 'Tie Game!'
-        window.location.reload()
+        # window.location.reload()
       , @)
 
   render: ->
